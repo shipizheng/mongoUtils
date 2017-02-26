@@ -48,7 +48,6 @@ func StartUp(sessionID string, config MongoConfiguration) error {
 	singleton = mongoManager{
 		sessions: make(map[string]mongoSession),
 	}
-	// hosts := strings.Split(config.Hosts, ",")
 	if err := CreateSession(sessionID, "monotonic", MonotonicSession, config); err != nil {
 		return err
 	}
